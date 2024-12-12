@@ -251,7 +251,7 @@ pub async fn run_http_server(state: StateHandle, port: u16) -> anyhow::Result<()
         .nest_service("/assets", ServeDir::new("assets"))
         .with_state(state);
 
-    let listener = tokio::net::TcpListener::bind(("0.0.0.0", port))
+    let listener = tokio::net::TcpListener::bind(("172.30.32.2", port))
         .await
         .with_context(|| format!("run_http_server: binding to port {port}"))?;
     let addr = listener.local_addr()?;

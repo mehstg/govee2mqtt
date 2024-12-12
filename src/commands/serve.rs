@@ -17,7 +17,7 @@ pub const POLL_INTERVAL: Lazy<chrono::Duration> = Lazy::new(|| chrono::Duration:
 #[derive(clap::Parser, Debug)]
 pub struct ServeCommand {
     /// The port on which the HTTP API will listen
-    #[arg(long, default_value_t = 8056)]
+    #[arg(long, default_value_t = 8099)]
     http_port: u16,
 }
 
